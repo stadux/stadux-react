@@ -1,3 +1,10 @@
-export * from './createEvent'
-export * from './createEffect'
-export * from './createStore'
+import { useEffect, useState } from 'react'
+import { Store } from 'stadux'
+
+export const useStore = <S>(store: Store<S>) => {
+  const [state, updateState] = useState<S>(store.getState())
+  useEffect(() => {
+    return store.watch(updateState)
+  }, [store])
+  return state
+}
