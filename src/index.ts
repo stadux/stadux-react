@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Store } from 'stadux'
+import { BaseStore } from 'stadux'
 
-export const useStore = <S>(store: Store<S>) => {
+export const useStore = <S>(store: BaseStore<S>) => {
   const [state, updateState] = useState<S>(store.getState())
   useEffect(() => {
     return store.watch(updateState)
