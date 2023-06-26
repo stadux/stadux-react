@@ -16,3 +16,4 @@
   <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/stadux-react">
 </p>
 
+Please use `npm run commit` to commit so that semantic-release can work!
